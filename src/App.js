@@ -41,9 +41,22 @@ const App = () => {
   useEffect(() => {
     checkScore()
   }, [cells])
+
+  /**
+   * <Game> // state for instructions, 
+   *   <GameBoard>
+   *     {cells.map() => <BoardCell />}
+   *   </GameBoard>
+   *   <GameMessage />
+   * </Game>
+   */
+
   return (
     <div className="app">
-      <div className="gameboard">
+      <GameProvider boardSize={3}>
+        
+      </GameProvider>
+      {/* <div className="gameboard">
         {cells.map((cell, index) => 
           <Cell 
             key={index}
@@ -57,7 +70,7 @@ const App = () => {
           />
         )}
       </div>
-      <p>{winningMessage || message}</p>
+      <p>{winningMessage || message}</p> */}
     </div>
   )
 }
